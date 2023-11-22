@@ -1,0 +1,235 @@
+[
+    {
+        "id": "5d2dc9d9ef61ee1e",
+        "type": "tab",
+        "label": "MQTT",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "36a093b3873b31e8",
+        "type": "mqtt in",
+        "z": "5d2dc9d9ef61ee1e",
+        "name": "",
+        "topic": "sens/t",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "427464b93c1e1438",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 80,
+        "wires": [
+            [
+                "1003ea048b12e1b2",
+                "0af5cbe08879b3d9"
+            ]
+        ]
+    },
+    {
+        "id": "a5153606ad7c2a78",
+        "type": "mqtt in",
+        "z": "5d2dc9d9ef61ee1e",
+        "name": "",
+        "topic": "sens/h",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "427464b93c1e1438",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 160,
+        "wires": [
+            [
+                "96ebc0eecb6e759d",
+                "c553b80665033c03"
+            ]
+        ]
+    },
+    {
+        "id": "1003ea048b12e1b2",
+        "type": "ui_gauge",
+        "z": "5d2dc9d9ef61ee1e",
+        "name": "",
+        "group": "ab5650aba38007e6",
+        "order": 1,
+        "width": "20",
+        "height": "5",
+        "gtype": "gage",
+        "title": "Температура",
+        "label": "℃",
+        "format": "{{value}}",
+        "min": "-30",
+        "max": "100",
+        "colors": [
+            "#1044e0",
+            "#0fd212",
+            "#ca3838"
+        ],
+        "seg1": "10",
+        "seg2": "25",
+        "diff": false,
+        "className": "",
+        "x": 280,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "96ebc0eecb6e759d",
+        "type": "ui_gauge",
+        "z": "5d2dc9d9ef61ee1e",
+        "name": "",
+        "group": "ab5650aba38007e6",
+        "order": 1,
+        "width": "20",
+        "height": "5",
+        "gtype": "wave",
+        "title": "Влажность",
+        "label": "г/м³",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#d71414",
+            "#69ccf7",
+            "#1e25f1"
+        ],
+        "seg1": "40",
+        "seg2": "70",
+        "diff": false,
+        "className": "",
+        "x": 270,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "dfd94786cd93a56d",
+        "type": "mysql",
+        "z": "5d2dc9d9ef61ee1e",
+        "mydb": "5c2206ae950610bd",
+        "name": "temperature",
+        "x": 450,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0af5cbe08879b3d9",
+        "type": "function",
+        "z": "5d2dc9d9ef61ee1e",
+        "name": "INSERT TEMP",
+        "func": "msg.topic = `INSERT INTO temperature VALUES (DEFAULT, ${msg.payload}, DEFAULT);`\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 100,
+        "wires": [
+            [
+                "dfd94786cd93a56d"
+            ]
+        ]
+    },
+    {
+        "id": "c553b80665033c03",
+        "type": "function",
+        "z": "5d2dc9d9ef61ee1e",
+        "name": "INSERT HUM",
+        "func": "msg.topic = `INSERT INTO humidity VALUES (DEFAULT, ${msg.payload}, DEFAULT);`\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 180,
+        "wires": [
+            [
+                "05c060e352f0d409"
+            ]
+        ]
+    },
+    {
+        "id": "05c060e352f0d409",
+        "type": "mysql",
+        "z": "5d2dc9d9ef61ee1e",
+        "mydb": "5c2206ae950610bd",
+        "name": "humidity",
+        "x": 440,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "427464b93c1e1438",
+        "type": "mqtt-broker",
+        "name": "mqtt",
+        "broker": "82.146.60.95",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "ab5650aba38007e6",
+        "type": "ui_group",
+        "name": "SENSORS",
+        "tab": "3c741ea8f7162dac",
+        "order": 1,
+        "disp": true,
+        "width": 20,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5c2206ae950610bd",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "db4free.net",
+        "port": "3306",
+        "db": "inno_prod",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "3c741ea8f7162dac",
+        "type": "ui_tab",
+        "name": "MQTT",
+        "icon": "dashboard",
+        "order": 5,
+        "disabled": false,
+        "hidden": false
+    }
+]

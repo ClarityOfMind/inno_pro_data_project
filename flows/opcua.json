@@ -1,0 +1,764 @@
+[
+    {
+        "id": "e57804fac92d4124",
+        "type": "tab",
+        "label": "OPCUA",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c41fefa31d17050a",
+        "type": "OpcUa-Item",
+        "z": "e57804fac92d4124",
+        "item": "ns=2;i=10847",
+        "datatype": "UInt16",
+        "value": "",
+        "name": "",
+        "x": 320,
+        "y": 100,
+        "wires": [
+            [
+                "ef6e867561da5aea"
+            ]
+        ]
+    },
+    {
+        "id": "ef6e867561da5aea",
+        "type": "OpcUa-Client",
+        "z": "e57804fac92d4124",
+        "endpoint": "cbd2a619de7190f1",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 500,
+        "y": 100,
+        "wires": [
+            [
+                "75bb3671b1b670d7"
+            ]
+        ]
+    },
+    {
+        "id": "75bb3671b1b670d7",
+        "type": "ui_chart",
+        "z": "e57804fac92d4124",
+        "name": "int16",
+        "group": "cac92eb1b78471f6",
+        "order": 1,
+        "width": 30,
+        "height": 7,
+        "label": "INT16",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "monotone",
+        "nodata": "INT16 Values will arrive soon",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "20",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#0717ed",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 650,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9af187992f3095cc",
+        "type": "OpcUa-Item",
+        "z": "e57804fac92d4124",
+        "item": "ns=2;i=10844",
+        "datatype": "Boolean",
+        "value": "",
+        "name": "",
+        "x": 320,
+        "y": 280,
+        "wires": [
+            [
+                "8a48186aecc9f764"
+            ]
+        ]
+    },
+    {
+        "id": "8a48186aecc9f764",
+        "type": "OpcUa-Client",
+        "z": "e57804fac92d4124",
+        "endpoint": "cbd2a619de7190f1",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 500,
+        "y": 280,
+        "wires": [
+            [
+                "649801885d90393c",
+                "dc6f636dd773add6"
+            ]
+        ]
+    },
+    {
+        "id": "2632ede45b97bab5",
+        "type": "ui_chart",
+        "z": "e57804fac92d4124",
+        "name": "",
+        "group": "a404053178ed06a9",
+        "order": 8,
+        "width": 20,
+        "height": 6,
+        "label": "График стабильности работы оборудования",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "step",
+        "nodata": "",
+        "dot": true,
+        "ymin": "0",
+        "ymax": "2",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": "30",
+        "useOneColor": true,
+        "useUTC": false,
+        "colors": [
+            "#f52d0a",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 940,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "764e1ce8009207cf",
+        "type": "OpcUa-Item",
+        "z": "e57804fac92d4124",
+        "item": "ns=2;i=10855",
+        "datatype": "String",
+        "value": "",
+        "name": "",
+        "x": 320,
+        "y": 160,
+        "wires": [
+            [
+                "e520d0a3c459c3c2"
+            ]
+        ]
+    },
+    {
+        "id": "e520d0a3c459c3c2",
+        "type": "OpcUa-Client",
+        "z": "e57804fac92d4124",
+        "endpoint": "cbd2a619de7190f1",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 500,
+        "y": 160,
+        "wires": [
+            [
+                "e8f09190053d69c3"
+            ]
+        ]
+    },
+    {
+        "id": "e8f09190053d69c3",
+        "type": "ui_text",
+        "z": "e57804fac92d4124",
+        "group": "a06099871c821559",
+        "order": 1,
+        "width": "20",
+        "height": "7",
+        "name": "String",
+        "label": "Сообщения:",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": true,
+        "font": "Lucida Sans Unicode,Lucida Grande,sans-serif",
+        "fontSize": "20",
+        "color": "#ff751a",
+        "x": 650,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "76ade618ceb03035",
+        "type": "inject",
+        "z": "e57804fac92d4124",
+        "name": "timestamp",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "hello",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 100,
+        "wires": [
+            [
+                "2e961a2126409b2c",
+                "c41fefa31d17050a",
+                "764e1ce8009207cf"
+            ]
+        ]
+    },
+    {
+        "id": "2e961a2126409b2c",
+        "type": "OpcUa-Item",
+        "z": "e57804fac92d4124",
+        "item": "ns=2;i=10847",
+        "datatype": "UInt32",
+        "value": "",
+        "name": "",
+        "x": 320,
+        "y": 40,
+        "wires": [
+            [
+                "7e6603374f40e8cf"
+            ]
+        ]
+    },
+    {
+        "id": "7e6603374f40e8cf",
+        "type": "OpcUa-Client",
+        "z": "e57804fac92d4124",
+        "endpoint": "cbd2a619de7190f1",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 500,
+        "y": 40,
+        "wires": [
+            [
+                "3d3bcc3ba68442a9"
+            ]
+        ]
+    },
+    {
+        "id": "3d3bcc3ba68442a9",
+        "type": "ui_chart",
+        "z": "e57804fac92d4124",
+        "name": "int32",
+        "group": "cac92eb1b78471f6",
+        "order": 2,
+        "width": 30,
+        "height": 7,
+        "label": "INT32",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "step",
+        "nodata": "INT32 Values will arrive soon",
+        "dot": true,
+        "ymin": "-40000",
+        "ymax": "40000",
+        "removeOlder": "20",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": "25",
+        "useOneColor": true,
+        "useUTC": true,
+        "colors": [
+            "#0717ed",
+            "#aec7e8",
+            "#ff7f0e",
+            "#1ce91c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 650,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aab627edfb0d8a69",
+        "type": "ui_audio",
+        "z": "e57804fac92d4124",
+        "name": "Аудио",
+        "group": "a404053178ed06a9",
+        "voice": "Microsoft Pavel - Russian (Russia)",
+        "always": true,
+        "x": 990,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "0a70485dfb9b7e86",
+        "type": "ui_text",
+        "z": "e57804fac92d4124",
+        "group": "a404053178ed06a9",
+        "order": 2,
+        "width": 6,
+        "height": 3,
+        "name": "String",
+        "label": "Состояние оборудования:",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": true,
+        "font": "Lucida Sans Unicode,Lucida Grande,sans-serif",
+        "fontSize": "20",
+        "color": "#f52d0a",
+        "x": 990,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "649801885d90393c",
+        "type": "bool",
+        "z": "e57804fac92d4124",
+        "name": "Ошибка",
+        "outputs": 1,
+        "inputField": "payload",
+        "outputField": "payload",
+        "outputFormat": "int",
+        "handleNull": "null",
+        "invert": false,
+        "strict": false,
+        "x": 680,
+        "y": 240,
+        "wires": [
+            [
+                "2632ede45b97bab5",
+                "84991eaec01559e4"
+            ]
+        ]
+    },
+    {
+        "id": "afd043b50053ad1e",
+        "type": "function",
+        "z": "e57804fac92d4124",
+        "name": "mapToErrorText",
+        "func": "msg.payload = msg.payload ? 'работает' : 'ошибка'\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 320,
+        "wires": [
+            [
+                "aab627edfb0d8a69",
+                "0a70485dfb9b7e86"
+            ]
+        ]
+    },
+    {
+        "id": "dc6f636dd773add6",
+        "type": "bool",
+        "z": "e57804fac92d4124",
+        "name": "Ошибка",
+        "outputs": 1,
+        "inputField": "payload",
+        "outputField": "payload",
+        "outputFormat": "bool",
+        "handleNull": "null",
+        "invert": false,
+        "strict": false,
+        "x": 680,
+        "y": 320,
+        "wires": [
+            [
+                "afd043b50053ad1e"
+            ]
+        ]
+    },
+    {
+        "id": "398d6b7b825c53c0",
+        "type": "inject",
+        "z": "e57804fac92d4124",
+        "name": "timestamp",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "hello",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 280,
+        "wires": [
+            [
+                "9af187992f3095cc"
+            ]
+        ]
+    },
+    {
+        "id": "04a314f5e133ed40",
+        "type": "telegram sender",
+        "z": "e57804fac92d4124",
+        "name": "tg_bot",
+        "bot": "b68415293bbf9b82",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 1170,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "84991eaec01559e4",
+        "type": "rbe",
+        "z": "e57804fac92d4124",
+        "name": "",
+        "func": "narrowband",
+        "gap": "0",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 830,
+        "y": 200,
+        "wires": [
+            [
+                "5ffd66b80cbd4cc4"
+            ]
+        ]
+    },
+    {
+        "id": "5ffd66b80cbd4cc4",
+        "type": "function",
+        "z": "e57804fac92d4124",
+        "name": "mapToTgMessage",
+        "func": "msg.payload = {\n    \"type\": \"message\",\n    \"chatId\": 304574137,\n    \"content\": \"ОШИБКА opcua sample server\"\n}\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1010,
+        "y": 200,
+        "wires": [
+            [
+                "04a314f5e133ed40"
+            ]
+        ]
+    },
+    {
+        "id": "7425938ca0a23756",
+        "type": "ui_spacer",
+        "z": "e57804fac92d4124",
+        "name": "spacer",
+        "group": "43afc9ade590be55",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "276fe2837624bee0",
+        "type": "ui_spacer",
+        "z": "e57804fac92d4124",
+        "name": "spacer",
+        "group": "43afc9ade590be55",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "5453af82060da361",
+        "type": "ui_spacer",
+        "z": "e57804fac92d4124",
+        "name": "spacer",
+        "group": "a404053178ed06a9",
+        "order": 1,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "35369b0b129f33cd",
+        "type": "ui_spacer",
+        "z": "e57804fac92d4124",
+        "name": "spacer",
+        "group": "a404053178ed06a9",
+        "order": 3,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "2c3350a0101174a9",
+        "type": "ui_spacer",
+        "z": "e57804fac92d4124",
+        "name": "spacer",
+        "group": "a404053178ed06a9",
+        "order": 4,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "deb30d287cc44b01",
+        "type": "ui_spacer",
+        "z": "e57804fac92d4124",
+        "name": "spacer",
+        "group": "a404053178ed06a9",
+        "order": 5,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "08ac4190cf43799c",
+        "type": "ui_spacer",
+        "z": "e57804fac92d4124",
+        "name": "spacer",
+        "group": "a404053178ed06a9",
+        "order": 6,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "47cfa9aec8e267ff",
+        "type": "ui_spacer",
+        "z": "e57804fac92d4124",
+        "name": "spacer",
+        "group": "a404053178ed06a9",
+        "order": 7,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "c17c892e5981bddb",
+        "type": "ui_spacer",
+        "z": "e57804fac92d4124",
+        "name": "spacer",
+        "group": "ab5650aba38007e6",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "cbd2a619de7190f1",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://opcua.demo-this.com:51210/UA/SampleServer",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "cac92eb1b78471f6",
+        "type": "ui_group",
+        "name": "NUMBERS",
+        "tab": "6277915a87cc7437",
+        "order": 1,
+        "disp": true,
+        "width": "30",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a404053178ed06a9",
+        "type": "ui_group",
+        "name": "BOOLEAN",
+        "tab": "915fbffe8db2b4f1",
+        "order": 1,
+        "disp": true,
+        "width": 20,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a06099871c821559",
+        "type": "ui_group",
+        "name": "String",
+        "tab": "1b5acf9e88b6b789",
+        "order": 2,
+        "disp": true,
+        "width": 20,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b68415293bbf9b82",
+        "type": "telegram bot",
+        "botname": "inno_prod_data_bot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "ab5650aba38007e6",
+        "type": "ui_group",
+        "name": "SENSORS",
+        "tab": "3c741ea8f7162dac",
+        "order": 1,
+        "disp": true,
+        "width": 20,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6277915a87cc7437",
+        "type": "ui_tab",
+        "name": "OPCUA-Numbers ",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "915fbffe8db2b4f1",
+        "type": "ui_tab",
+        "name": "OPCUA-Boolean",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "1b5acf9e88b6b789",
+        "type": "ui_tab",
+        "name": "OPCUA-String",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "3c741ea8f7162dac",
+        "type": "ui_tab",
+        "name": "MQTT",
+        "icon": "dashboard",
+        "order": 5,
+        "disabled": false,
+        "hidden": false
+    }
+]
